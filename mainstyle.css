@@ -24,18 +24,18 @@ input[type="radio"]{-webkit-border-radius:0;border-radius:0;appearance:radio!imp
 ::-moz-selection{background-color:#000;color:#fff}
 ::selection{background-color:#000;color:#fff}
 
-input[type="text"]::-webkit-input-placeholder{opacity:1;color:#2B3241;}
-input[type="text"]::-moz-placeholder{opacity:1;color:#2B3241;}
-input[type="text"]::-ms-input-placeholder{opacity:1;color:#2B3241;}
-input[type="email"]::-webkit-input-placeholder{opacity:1;color:#2B3241;}
-input[type="email"]::-moz-placeholder{opacity:1;color:#2B3241;}
-input[type="email"]::-ms-input-placeholder{opacity:1;color:#2B3241;}
-input[type="password"]::-webkit-input-placeholder{opacity:1;color:#2B3241;}
-input[type="password"]::-moz-placeholder{opacity:1;color:#2B3241;}
-input[type="password"]::-ms-input-placeholder{opacity:1;color:#2B3241;}
-textarea::-webkit-input-placeholder{opacity:1;color:#2B3241;}
-textarea::-moz-placeholder{opacity:1;color:#2B3241;}
-textarea::-ms-input-placeholder{opacity:1;color:#2B3241;}
+input[type="text"]::-webkit-input-placeholder{opacity:1;color:#969494;}
+input[type="text"]::-moz-placeholder{opacity:1;color:#969494;}
+input[type="text"]::-ms-input-placeholder{opacity:1;color:#969494;}
+input[type="email"]::-webkit-input-placeholder{opacity:1;color:#969494;}
+input[type="email"]::-moz-placeholder{opacity:1;color:#969494;}
+input[type="email"]::-ms-input-placeholder{opacity:1;color:#969494;}
+input[type="password"]::-webkit-input-placeholder{opacity:1;color:#969494;}
+input[type="password"]::-moz-placeholder{opacity:1;color:#969494;}
+input[type="password"]::-ms-input-placeholder{opacity:1;color:#969494;}
+textarea::-webkit-input-placeholder{opacity:1;color:#969494;}
+textarea::-moz-placeholder{opacity:1;color:#969494;}
+textarea::-ms-input-placeholder{opacity:1;color:#969494;}
 
 select::-ms-expand{display:none}
 select{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}
@@ -156,6 +156,7 @@ html, .awards-list {
 .header-top p{font-family:Montserrat;font-size:14px;font-weight:500;line-height:20px;letter-spacing:-.01em;color:#B5B5B5}
 .header-top p a{color:#B5B5B5;font-weight:600}
 .header-top p i{margin-right:10px;color:#fff}
+.header-top p a:hover{color: #fff;}
 .header-btm{padding:16px 0; transition: all 0.4s; background: #fff;}
 .header-nav{gap:40px}
 .header-nav ul{display:flex;gap:30px}
@@ -340,21 +341,41 @@ section.body-content ul li::after{content:'';width:8px;height:8px;background:#21
 .best-airlines{background:#FBFBFB}
 .airlines-search-main{background:#fff;padding:15px;border-radius:15px}
 .airlines-list{margin-top: 20px;}
-.airlines-list .fl-slider-block {
-	margin: 0;
-}
-ul.pagination li {
-  margin: 0 10px;
-}
-ul.pagination li a.page-link {
-  width: 56px;
-  height: 56px;
-  text-align: center;
-  line-height: 54px;
-  padding: 0;
-  border-radius: 50% !important;
-  color: #777777;
-}
+.airlines-list .fl-slider-block{margin:0}
+ul.pagination li{margin:0 10px}
+ul.pagination li a.page-link{width:56px;height:56px;text-align:center;line-height:54px;padding:0;border-radius:50%!important;color:#777}
+
+/* Contact */
+.contact-main{background: #FBFBFB;}
+section.contact-main .inner{box-shadow:0 0 40px 0 #00000014;background:#fff;border-radius:10px}
+section.contact-main .inner > div{width:100%}
+.ct-left{line-height:0}
+.ct-left iframe{width:100%;height:100%;border-radius:10px;min-height:550px}
+.ct-right{padding:40px}
+.ct-info{padding-top:30px;margin-top:30px;border-top:1px solid #BEB9B9}
+.ct-info li{display:flex;align-items:center;gap:19px;margin:0 0 50px;color:#111B3C;font-size:27.78px;font-weight:400;line-height:31.11px}
+.ct-info li:last-child{margin:0}
+.ct-info li > a{color:#111B3C;font-size:27.78px;font-weight:400;line-height:31.11px}
+.ct-info li span{display: block;}
+.ct-info li span a{font-size:17.78px;font-weight:500;line-height:31.11px;color:#5D697C}
+
+textarea.form-control{height: 200px; color: #969494; font-family: "Lato", serif;}
+.contact-main .log-main{max-width: 950px;}
+
+/* Rating */
+.review-sec{background-size:cover!important}
+button#dropdownMenuButton{display:flex;align-items:center;width:100%;border:1px solid #00000026;background:#fff url(assets/img/select-arrow.png) 96% no-repeat;border-radius:10px;padding:7px;font-size:22px;font-weight:500;line-height:26.4px;color:#606060}
+button#dropdownMenuButton > img{width:126px;height:88px;border-radius:4px;object-fit:cover;margin-right:33px}
+.dropdown-toggle::after{display:none}
+ul.dropdown-menu{width:100%;border:1px solid #00000026;background:#fff;padding:0}
+ul.dropdown-menu li a{display:flex;align-items:center;width:100%;padding:5px;background:transparent;border:0;border-radius:0}
+ul.dropdown-menu li img{width:70px;height:53px;border-radius:4px;object-fit:cover;margin-right:18px}
+.dropdown-item.active,.dropdown-item:active{background:#e9ecef}
+.rate-here a{border:0;font-size:22px}
+.rate-here i.fa-solid.fa-star{color:#FFCE2C}
+.review-sec textarea.form-control{height:133px}
+
+
 
 
 
@@ -439,13 +460,17 @@ ul.pagination li a.page-link {
   ul.pagination li a.page-link{width:46px;height:46px;line-height:42px}
   ul.pagination li{margin:0 5px}
 
+  .ct-left iframe{min-height: 500px;}
+  .ct-info li img {max-width: 50px;}
+  .ct-info li{font-size: 22px;}
+  .ct-info li span a{font-size: 16px;}
 
-
-
-
-
-
-
+  button#dropdownMenuButton > img {
+    width: 110px;
+    height: 80px;
+    margin-right: 20px;
+  }
+  button#dropdownMenuButton{font-size: 20px;}
 }
 
 @media only screen and (max-width: 1270.98px) {
@@ -500,6 +525,7 @@ ul.pagination li a.page-link {
   .airlines-search-main{padding: 10px;}  
   .show-result{font-size:14px}
   .search-sort{font-size:14px}
+  button#dropdownMenuButton {font-size: 18px;}
 }
 
 @media only screen and (max-width: 991.98px) {
@@ -536,12 +562,11 @@ ul.pagination li a.page-link {
   .form-control{height:50px;border-radius:10px}
   .body-content h1 { font-size: 30px; line-height: 40px; margin: 0 0 30px; }
 
-
-
-
-
-
-
+  .ct-left iframe{min-height:unset}
+  .ct-right{padding:25px}
+  .ct-info li img{max-width:40px}
+  .ct-info li{gap:12px;font-size:18px;line-height:22px;margin:0 0 30px}
+  textarea.form-control{height:160px}
 }
 
 
@@ -595,6 +620,13 @@ ul.pagination li a.page-link {
   .search-sort .form-select {font-size: 13px; }
   .search-here input{font-size: 14px;}
 
+  section.contact-main .inner{flex-direction: column;}
+  .ct-info li{font-size:16px;line-height:20px;margin:0 0 20px;gap:8px}
+  .ct-info li img{max-width:30px}
+  .ct-info li span a{font-size:14px}
+  button#dropdownMenuButton > img { width: 81px; height: 60px; margin-right: 12px; }
+  button#dropdownMenuButton {font-size: 16px; }
+
 
 
 
@@ -629,5 +661,5 @@ ul.pagination li a.page-link {
   .form-check label{font-size:14px}
   .log-main .btn{height:45px}
 
-
+  .ct-right {padding: 20px 15px; }
 }
