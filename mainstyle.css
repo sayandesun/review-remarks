@@ -342,7 +342,8 @@ section.body-content ul li::after{content:'';width:8px;height:8px;background:#21
 .airlines-search-main{background:#fff;padding:15px;border-radius:15px}
 .airlines-list{margin-top: 20px;}
 .airlines-list .fl-slider-block{margin:0}
-ul.pagination li{margin:0 10px}
+ul.pagination li { margin: 0 10px !important; padding: 0 !important;}
+ul.pagination li::after{display: none;}
 ul.pagination li a.page-link{width:56px;height:56px;text-align:center;line-height:54px;padding:0;border-radius:50%!important;color:#777}
 
 /* Contact */
@@ -466,7 +467,7 @@ ul.dropdown-menu li img{width:70px;height:53px;border-radius:4px;object-fit:cove
   .search-here{max-width:480px}
   .search-sort{font-size:16px}
   ul.pagination li a.page-link{width:46px;height:46px;line-height:42px}
-  ul.pagination li{margin:0 5px}
+  ul.pagination li{margin:0 5px !important;}
 
   .ct-left iframe{min-height: 500px;}
   .ct-info li img {max-width: 50px;}
