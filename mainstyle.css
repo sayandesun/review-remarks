@@ -345,6 +345,12 @@ section.body-content ul li::after{content:'';width:8px;height:8px;background:#21
 ul.pagination li { margin: 0 10px !important; padding: 0 !important;}
 ul.pagination li::after{display: none;}
 ul.pagination li a.page-link{width:56px;height:56px;text-align:center;line-height:54px;padding:0;border-radius:50%!important;color:#777}
+li.page-item.active a {color: #fff !important;}
+
+
+
+
+
 
 /* Contact */
 .contact-main{background: #FBFBFB;}

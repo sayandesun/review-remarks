@@ -107,13 +107,7 @@
             </div>
         </div>
         <div class="pagination-tab d-flex align-items-center justify-content-center mt-5">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-arrow-left-long"></i></a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-arrow-right-long"></i></a></li>
-            </ul>
+            <ul class="pagination"></ul>
         </div>
     </div>
   </section>
@@ -215,6 +209,91 @@
         collapsible: true
       });
     } );
+</script>
+
+<script>
+$(document).ready(function () {
+    const itemsPerPage = 4; // Number of FAQ items per page
+    const items = $(".accordion h3"); // Select FAQ headers
+    const totalItems = items.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    // Function to display the current page items
+    function showPage(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        // Hide all FAQ items
+        items.hide();
+        items.next(".faq-content").hide();
+
+        // Show only the items for the current page
+        items.slice(start, end).show();
+        items.next(".faq-content").slice(start, end).show();
+
+        // Update pagination active class
+        $(".pagination .page-item").removeClass("active");
+        $(`.pagination .page-item[data-page="${page}"]`).addClass("active");
+
+        // Enable/disable Previous and Next buttons
+        $(".pagination .previous").toggleClass("disabled", page === 1);
+        $(".pagination .next").toggleClass("disabled", page === totalPages);
+
+        // Re-initialize the accordion for the visible items
+        $(".accordion").accordion("destroy"); // Destroy existing accordion
+        $(".accordion").accordion({
+            collapsible: true,
+            heightStyle: "content",
+            active: false
+        });
+    }
+
+    // Function to generate pagination dynamically
+    function generatePagination() {
+        const pagination = $(".pagination");
+
+        // Add Previous button
+        pagination.append('<li class="page-item previous disabled"><a class="page-link" href="#"><i class="fa-solid fa-arrow-left-long"></i></a></li>');
+
+        // Add page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            pagination.append(`<li class="page-item" data-page="${i}"><a class="page-link" href="#">${i}</a></li>`);
+        }
+
+        // Add Next button
+        pagination.append('<li class="page-item next"><a class="page-link" href="#"><i class="fa-solid fa-arrow-right-long"></i></a></li>');
+    }
+
+    // Event listeners for pagination
+    $(".pagination").on("click", ".page-item:not(.previous):not(.next)", function (e) {
+        e.preventDefault();
+        const page = $(this).data("page");
+        if (page) showPage(page);
+    });
+
+    $(".pagination").on("click", ".previous", function (e) {
+        e.preventDefault();
+        const currentPage = $(".pagination .active").data("page");
+        if (currentPage > 1) showPage(currentPage - 1);
+    });
+
+    $(".pagination").on("click", ".next", function (e) {
+        e.preventDefault();
+        const currentPage = $(".pagination .active").data("page");
+        if (currentPage < totalPages) showPage(currentPage + 1);
+    });
+
+    // Initialize accordion and pagination
+    $(".accordion").accordion({
+        collapsible: true,
+        heightStyle: "content",
+        active: false
+    });
+
+    generatePagination();
+    showPage(1);
+});
+
 </script>
   
   </body>
