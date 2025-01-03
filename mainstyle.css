@@ -368,7 +368,7 @@ textarea.form-control{height: 200px; color: #969494; font-family: "Lato", serif;
 button#dropdownMenuButton{display:flex;align-items:center;width:100%;border:1px solid #00000026;background:#fff url(assets/img/select-arrow.png) 96% no-repeat;border-radius:10px;padding:7px;font-size:22px;font-weight:500;line-height:26.4px;color:#606060}
 button#dropdownMenuButton > img{width:126px;height:88px;border-radius:4px;object-fit:cover;margin-right:33px}
 .dropdown-toggle::after{display:none}
-ul.dropdown-menu{width:100%;border:1px solid #00000026;background:#fff;padding:0}
+ul.dropdown-menu{width:100%;border:1px solid #00000026;background:#fff;padding:0; max-height: 195px; overflow: auto;}
 ul.dropdown-menu li a{display:flex;align-items:center;width:100%;padding:5px;background:transparent;border:0;border-radius:0}
 ul.dropdown-menu li img{width:70px;height:53px;border-radius:4px;object-fit:cover;margin-right:18px}
 .dropdown-item.active,.dropdown-item:active{background:#e9ecef}
